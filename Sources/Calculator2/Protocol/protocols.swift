@@ -3,7 +3,7 @@ import Foundation
 protocol Inputable{
     associatedtype input
     var inputValue: input {get set}
-    func receiver(_ value: input)
+    func receiver<T>(_ value: T)
 }
 
 protocol InputNumberable: Inputable{

@@ -1,4 +1,4 @@
-class Calculator2: DoCalculate, Printable{
+final class Calculator2: DoCalculate, Printable{
     var text: String = String()
     
     func printText(){

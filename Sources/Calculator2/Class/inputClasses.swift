@@ -8,13 +8,21 @@ class ColletState{
     init(){}
 }
 
+class InputNumber2: Inputable{
+    var inputValue: [Any] = []
+    func receiver<T>(_ value: T) {
+        inputValue.append(value)
+    }
+}
+
 class InputNumber: ColletState, InputNumberable{
     
     var inputValue: String = String()
     
     var inputNumber: numbers = numbers.zero
     
-    func receiver(_ value: String){}
+    func receiver<T>(_ value: T){
+    }
     
     func receiveNumber(_ value: numbers){
         stState = .didStart

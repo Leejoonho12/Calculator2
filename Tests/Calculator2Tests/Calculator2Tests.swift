@@ -20,6 +20,6 @@ final class Calculator2Tests: XCTestCase {
         instance.textNumberSet(.three)
         instance.operatorSet(.add)
         instance.getResult()  // +1+2.2-*+.2.*3+= -> 1+2.2+0.2*3=
-//        XCTAssertEqual(instance.text, "9.2")
+        XCTAssertEqual(instance.text, "3.8")
     }
 }
