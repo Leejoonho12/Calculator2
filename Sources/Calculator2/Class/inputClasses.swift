@@ -14,6 +14,9 @@ class InputNumber2: Inputable{
         inputValue.append(value)
     }
 }
+/*
+ 숫자랑 . 만 들어올거니까 .
+ */
 
 class InputNumber: ColletState, InputNumberable{
     
