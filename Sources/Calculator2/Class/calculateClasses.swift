@@ -80,14 +80,6 @@ class DoCalculate: FormulaMaker, Calculateable{
         }
     }
     
-    func toString(_ result: Double) -> String {
-        if result.truncatingRemainder(dividingBy: 1) == 0.0{
-            return String(Int(result))
-        }else{
-            return String(result)
-        }
-    }
-    
     override init(){
         super.init()
     }
@@ -102,6 +94,14 @@ extension DoCalculate{
             if let result = anyResult as? Double{
                 doubleNumber = result
             }
+        }
+    }
+    
+    func nsToString(_ result: Double) -> String {
+        if result.truncatingRemainder(dividingBy: 1) == 0.0{
+            return String(Int(result))
+        }else{
+            return String(result)
         }
     }
 }

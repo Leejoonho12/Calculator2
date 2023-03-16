@@ -39,7 +39,7 @@ extension Calculator2{
     
     func operatorSet(_ value: operators){ // 연산자 받아서 저장하고 출력하는 메서드
         if stState == .willStart{
-            return
+            formula += "0"
         }
         if inputValue == "."{
             stringNumber += "0"
@@ -53,7 +53,7 @@ extension Calculator2{
         if value == .add || value == .min{
             if calState == .onlyAdd{
                 nsCalculate()
-                result = toString(doubleNumber)
+                result = nsToString(doubleNumber)
                 text = result
             }else{
                 text = stringNumber
@@ -71,7 +71,7 @@ extension Calculator2{
         }
         print(formula)
 //        nsCalculate()
-//        result = toString(doubleNumber)
+//        result = nsToString(doubleNumber)
         result = toString(calculate)
         text = result
         printText()

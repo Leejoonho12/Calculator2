@@ -1,6 +1,6 @@
 import Foundation
 
-enum startState{ // 처음에 연산자가 오면 안되기 때문에 처음인지 아닌지 나누기 위해
+enum startState{ // 처음에 숫자를 입력받으면 입력받은 숫자로 시작하지만 연산자를 입력받으면 0부터 시작하기 때문에 시작점인지를 파악하기 위해
     case willStart
     case didStart
 }

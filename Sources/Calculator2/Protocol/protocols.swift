@@ -21,9 +21,10 @@ protocol Formulable{
 }
 
 protocol Calculateable{
+    associatedtype res
     var result: String {get set}
     func calculate(_ formula: String) -> Double
-    func toString(_ result: Double) -> String
+    func toString(_ result: res) -> String
 }
 
 protocol Printable{
