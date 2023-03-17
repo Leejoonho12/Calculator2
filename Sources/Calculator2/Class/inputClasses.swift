@@ -8,15 +8,22 @@ class ColletState{
     init(){}
 }
 
-class InputNumber2: Inputable{
-    var inputValue: [Any] = []
+class Inputer: ColletState, Inputable{
+    
+    var inputValue: Any = ""
+    
     func receiver<T>(_ value: T) {
-        inputValue.append(value)
+        stState = .didStart
+        inputState = .adding
+        inputValue = value
+    }
+    
+    override init(){
+        super.init()
     }
 }
-/*
- 숫자랑 . 만 들어올거니까 .
- */
+
+
 
 class InputNumber: ColletState, InputNumberable{
     
@@ -28,8 +35,6 @@ class InputNumber: ColletState, InputNumberable{
     }
     
     func receiveNumber(_ value: numbers){
-        stState = .didStart
-        inputState = .adding
         inputNumber = value
         inputValue = inputNumber.rawValue
     }
@@ -46,7 +51,6 @@ class InputOperator: InputNumber, InputOperatorable{
     var inputOperator: operators = operators.add
     
     func receiveOperator(_ value: operators){
-        inputState = .operating
         inputOperator = value
         operatorValue = inputOperator.rawValue
     }

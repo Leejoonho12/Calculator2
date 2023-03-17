@@ -1,3 +1,5 @@
+import Foundation
+
 final class Calculator2: DoCalculate, Printable{
     var text: String = String()
     
@@ -13,6 +15,7 @@ final class Calculator2: DoCalculate, Printable{
 extension Calculator2{
     
     func textNumberSet(_ value: numbers){ // 숫자 받아서 저장하고 출력하는 메서드
+        stState = .didStart
         if inputState == .operating{
             if stringOperator == "*" || stringOperator == "/"{
                 calState = .mix
@@ -31,8 +34,9 @@ extension Calculator2{
             }
             numState = .double
         }
+        inputState = .adding
         receiveNumber(value)
-        addNumber = String(inputValue)
+        addNumber = inputValue
         text = stringNumber
         printText()
     }
@@ -48,6 +52,7 @@ extension Calculator2{
             formula += stringNumber
             stringOperator = ""
         }
+        inputState = .operating
         receiveOperator(value)
         stringOperator = operatorValue
         if value == .add || value == .min{
