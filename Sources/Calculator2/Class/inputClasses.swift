@@ -13,8 +13,6 @@ class Inputer: ColletState, Inputable{
     var inputValue: Any = ""
     
     func receiver<T>(_ value: T) {
-        stState = .didStart
-        inputState = .adding
         inputValue = value
     }
     

@@ -26,6 +26,19 @@ class FormulaMaker: InputOperator, Formulable{
     }
 }
 
+struct FormulaMaker2: Formulable{
+    
+    var stringNumber: String = String()
+    
+    var stringOperator: String = String()
+    
+    var formula: String = String()
+    
+    func addValue(_ value: Any){
+        
+    }
+}
+
 class DoCalculate: FormulaMaker, Calculateable{
     
     var result: String = String()
